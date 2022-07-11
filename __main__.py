@@ -2,7 +2,7 @@ from naoqi import ALBroker
 import threading
 from pepper_recorder import SoundProcessingModule
 if __name__ == '__main__':
-    IP = "172.16.0.119" #Change this to Pepper's IP address
+    IP = "192.168.1.239" #Change this to Pepper's IP address
 
     # Creation of a new Python Broker
     stop_recognition = threading.Event()
