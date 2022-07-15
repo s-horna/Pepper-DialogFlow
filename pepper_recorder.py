@@ -34,7 +34,7 @@ class SoundProcessingModule(ALModule):
     def startProcessing(self):
         """init sound processing, set microphone and stream rate"""
         print("startProcessing")
-        self.ALAudioDevice.setClientPreferences(self.getName(), 16000, 3, 0)
+        self.ALAudioDevice.setClientPreferences(self.getName(), 48000, 0, 0)
         self.ALAudioDevice.subscribe(self.getName())
         while not self.stopRecognition.is_set():
             time.sleep(1)
