@@ -10,7 +10,7 @@ import traceback
 import wave
 from detect_intent_stream import detect_intent_stream
 LISTEN_RETRIES = 10
-DIALOG_FLOW_GCP_PROJECT_ID = "jokes-wiqv"
+DIALOG_FLOW_GCP_PROJECT_ID = "canto-kgjv"
 
 class SoundProcessingModule(ALModule):
 
@@ -48,7 +48,7 @@ class SoundProcessingModule(ALModule):
         sound_data = np.reshape(sound_data_interlaced, (nbOfChannels, nbOfSamplesByChannel), 'F')
         peak_value = np.max(sound_data)
         # detect sound
-        if peak_value > 13000:
+        if peak_value > 10000:
             print ("Peak:", peak_value)
             self.count = LISTEN_RETRIES
             if not self.recordingInProgress:

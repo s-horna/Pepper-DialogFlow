@@ -1,0 +1,3 @@
+Postman OAuth:
+- Client ID: 520251805812-k8o95mb4dl6hmtaodapvcdukq8bljdre.apps.googleusercontent.com
+- Client Secret: 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
