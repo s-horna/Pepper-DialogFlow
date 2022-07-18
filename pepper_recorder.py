@@ -48,7 +48,7 @@ class SoundProcessingModule(ALModule):
         sound_data = np.reshape(sound_data_interlaced, (nbOfChannels, nbOfSamplesByChannel), 'F')
         peak_value = np.max(sound_data)
         # detect sound
-        if peak_value > 10000:
+        if peak_value > 11000:
             print ("Peak:", peak_value)
             self.count = LISTEN_RETRIES
             if not self.recordingInProgress:

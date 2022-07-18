@@ -85,8 +85,19 @@ def detect_intent_stream(project_id, session_id, audio_file_path, language_code,
             # elif query_result.action.lower() == "url":
             #     do_tablet(query_result, session)
             else:
-                tts = session.service("ALTextToSpeech")
-                tts.say(query_result.fulfillment_text)
+                tts = session.service("ALAnimatedSpeech")
+                # anim_player = session.service("ALAnimationPlayer")
+                if query_result.action == 'input.welcome':
+                    # print('no error')
+                    # anim_player.run('animations/Stand/Gestures/Hey_3')
+                    tts.say('^start(animations/Stand/Gestures/Hey_6)'+query_result.fulfillment_text)
+                    # tts.say(query_result.fulfillment_text)
+                elif query_result.action == 'smalltalk.agent.acquaintance':
+                    tts.say('^start(animations/Stand/Gestures/Me_7)'+query_result.fulfillment_text)
+                elif "sorry" in query_result.fulfillment_text:
+                    tts.say('^start(nimations/Stand/Emotions/Positive/Embarrassed_1)'+query_result.fulfillment_text)
+                else:
+                    tts.say(query_result.fulfillment_text)
         except:
             # traceback.print_exc()
             raise "session.connect failed."
