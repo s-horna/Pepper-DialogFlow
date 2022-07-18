@@ -94,7 +94,7 @@ def detect_intent_stream(project_id, session_id, audio_file_path, language_code,
                     # tts.say(query_result.fulfillment_text)
                 elif query_result.action == 'smalltalk.agent.acquaintance':
                     tts.say('^start(animations/Stand/Gestures/Me_7)'+query_result.fulfillment_text)
-                elif "sorry" in query_result.fulfillment_text:
+                elif query_result.action == 'smalltalk.appraisal.bad' or query_result.action == 'smalltalk.agent.bad':
                     tts.say('^start(nimations/Stand/Emotions/Positive/Embarrassed_1)'+query_result.fulfillment_text)
                 else:
                     tts.say(query_result.fulfillment_text)
